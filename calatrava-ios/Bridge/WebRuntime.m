@@ -1,4 +1,5 @@
 #import "WebRuntime.h"
+#import "UIWebView+SafeJavaScriptExecution.h"
 
 @interface WebRuntime()
 
@@ -42,7 +43,7 @@
   {
     NSLog(@"Loading: %@", path);
     ++outstandingScriptLoads;
-    [rtWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"calatrava.bridge.native.load('%@');", path]];
+    [rtWebView stringBySafelyEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"calatrava.bridge.native.load('%@');", path]];
   }
 }
 
@@ -57,7 +58,7 @@
   else
   {
     NSString *funcCall = [NSString stringWithFormat:@"%@(%@);", function, [self argsToString:args]];
-    NSString *returnVal = [rtWebView stringByEvaluatingJavaScriptFromString:funcCall];
+    NSString *returnVal = [rtWebView stringBySafelyEvaluatingJavaScriptFromString:funcCall];
     NSLog(@"Function '%@' returned: %@", funcCall, returnVal);
   }
 }
@@ -89,7 +90,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
   {
     NSArray *functionAndArgs = [[requestString substringFromIndex:[funcPrefix length]] componentsSeparatedByString:@"&"];
     NSString *function = [functionAndArgs objectAtIndex:0];
-    NSString *argsJson = [rtWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"calatrava.bridge.native.getArgs('%@');", [functionAndArgs objectAtIndex:1]]];
+    NSString *argsJson = [rtWebView stringBySafelyEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"calatrava.bridge.native.getArgs('%@');", [functionAndArgs objectAtIndex:1]]];
     NSLog(@"Targeting: %@", function);
     NSLog(@"With args: %@", argsJson);
     NSArray *args = (NSArray *)[NSJSONSerialization JSONObjectWithData:[argsJson dataUsingEncoding:NSUTF8StringEncoding]

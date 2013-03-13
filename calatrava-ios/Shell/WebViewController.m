@@ -1,4 +1,5 @@
 #import "WebViewController.h"
+#import "UIWebView+SafeJavaScriptExecution.h"
 
 @interface WebViewController()
 - (void)renderMessage:(NSDictionary *)message;
@@ -69,7 +70,7 @@
 }
 
 - (id)valueForField:(NSString *)field {
-  return [_webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"window.%@View.get('%@');", [self pageName], field]];
+  return [_webView stringBySafelyEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"window.%@View.get('%@');", [self pageName], field]];
 }
 
 - (id)attachHandler:(NSString *)proxyId forEvent:(NSString *)event
@@ -86,7 +87,7 @@
 - (void)bindWebEvent:(NSString *)event
 {
   NSString *jsCode = [NSString stringWithFormat:@"window.%@View.bind('%@', tw.batSignalFor('%@'));", [self pageName], event, event];
-  [_webView stringByEvaluatingJavaScriptFromString:jsCode];
+  [_webView stringBySafelyEvaluatingJavaScriptFromString:jsCode];
 }
 
 - (void)renderMessage:(NSDictionary *)message
@@ -99,7 +100,7 @@
   NSLog(@"Page name: %@", [self pageName]);
   
   NSString *render = [NSString stringWithFormat:@"window.%@View.render(%@);", [self pageName], responseJson];
-  [_webView stringByEvaluatingJavaScriptFromString:render];
+  [_webView stringBySafelyEvaluatingJavaScriptFromString:render];
 }
 
 # pragma mark - WebView delegate methods

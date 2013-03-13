@@ -27,6 +27,8 @@
 		C6301C6C15C208CF00E9E27F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6301C2F15C208CF00E9E27F /* WebViewController.m */; };
 		C6C851A815D88AB900445924 /* WebRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = C6C851A615D88AB900445924 /* WebRuntime.h */; };
 		C6C851A915D88AB900445924 /* WebRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C851A715D88AB900445924 /* WebRuntime.m */; };
+		D78C6EBD9DBA265CC333DA7F /* UIWebView+SafeJavaScriptExecution.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6D10484A4A517F7CD0B3 /* UIWebView+SafeJavaScriptExecution.m */; };
+		D78C6EE438A7C26866711581 /* UIWebView+SafeJavaScriptExecution.h in Headers */ = {isa = PBXBuildFile; fileRef = D78C67DFA18B6A14C102B41E /* UIWebView+SafeJavaScriptExecution.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		C632C7E515D6E3CA00203D4B /* JsRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsRuntime.h; sourceTree = "<group>"; };
 		C6C851A615D88AB900445924 /* WebRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRuntime.h; sourceTree = "<group>"; };
 		C6C851A715D88AB900445924 /* WebRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRuntime.m; sourceTree = "<group>"; };
+		D78C67DFA18B6A14C102B41E /* UIWebView+SafeJavaScriptExecution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+SafeJavaScriptExecution.h"; sourceTree = "<group>"; };
+		D78C6D10484A4A517F7CD0B3 /* UIWebView+SafeJavaScriptExecution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+SafeJavaScriptExecution.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				C6301B5515C2036000E9E27F /* calatrava-ios-Prefix.pch */,
+				D78C6D10484A4A517F7CD0B3 /* UIWebView+SafeJavaScriptExecution.m */,
+				D78C67DFA18B6A14C102B41E /* UIWebView+SafeJavaScriptExecution.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 				C6C851A815D88AB900445924 /* WebRuntime.h in Headers */,
 				C6088F0D16404949002F6B00 /* PluginRegistry.h in Headers */,
 				C6088F1A1647B2D8002F6B00 /* AlertPlugin.h in Headers */,
+				D78C6EE438A7C26866711581 /* UIWebView+SafeJavaScriptExecution.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +251,7 @@
 				C6C851A915D88AB900445924 /* WebRuntime.m in Sources */,
 				C6088F0E16404949002F6B00 /* PluginRegistry.m in Sources */,
 				C6088F1B1647B2D8002F6B00 /* AlertPlugin.m in Sources */,
+				D78C6EBD9DBA265CC333DA7F /* UIWebView+SafeJavaScriptExecution.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

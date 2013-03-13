@@ -29,6 +29,8 @@
 		C6C851A915D88AB900445924 /* WebRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C851A715D88AB900445924 /* WebRuntime.m */; };
 		D78C6EBD9DBA265CC333DA7F /* UIWebView+SafeJavaScriptExecution.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6D10484A4A517F7CD0B3 /* UIWebView+SafeJavaScriptExecution.m */; };
 		D78C6EE438A7C26866711581 /* UIWebView+SafeJavaScriptExecution.h in Headers */ = {isa = PBXBuildFile; fileRef = D78C67DFA18B6A14C102B41E /* UIWebView+SafeJavaScriptExecution.h */; };
+		FD2C34CC16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = FD2C34CA16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h */; };
+		FD2C34CD16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2C34CB16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		C6C851A715D88AB900445924 /* WebRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRuntime.m; sourceTree = "<group>"; };
 		D78C67DFA18B6A14C102B41E /* UIWebView+SafeJavaScriptExecution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+SafeJavaScriptExecution.h"; sourceTree = "<group>"; };
 		D78C6D10484A4A517F7CD0B3 /* UIWebView+SafeJavaScriptExecution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+SafeJavaScriptExecution.m"; sourceTree = "<group>"; };
+		FD2C34CA16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsoluteURLMappingURLProtocol.h; sourceTree = "<group>"; };
+		FD2C34CB16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsoluteURLMappingURLProtocol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				C6088F171647B275002F6B00 /* RegisteredPlugin.h */,
 				C6088F181647B2D7002F6B00 /* AlertPlugin.h */,
 				C6088F191647B2D7002F6B00 /* AlertPlugin.m */,
+				FD2C34CA16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h */,
+				FD2C34CB16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.m */,
 			);
 			path = Bridge;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 				C6088F0D16404949002F6B00 /* PluginRegistry.h in Headers */,
 				C6088F1A1647B2D8002F6B00 /* AlertPlugin.h in Headers */,
 				D78C6EE438A7C26866711581 /* UIWebView+SafeJavaScriptExecution.h in Headers */,
+				FD2C34CC16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +259,7 @@
 				C6088F0E16404949002F6B00 /* PluginRegistry.m in Sources */,
 				C6088F1B1647B2D8002F6B00 /* AlertPlugin.m in Sources */,
 				D78C6EBD9DBA265CC333DA7F /* UIWebView+SafeJavaScriptExecution.m in Sources */,
+				FD2C34CD16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

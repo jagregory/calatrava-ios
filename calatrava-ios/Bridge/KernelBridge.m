@@ -4,6 +4,7 @@
 #import "TWBridgeURLRequestManager.h"
 #import "PluginRegistry.h"
 #import "AlertPlugin.h"
+#import "AbsoluteURLMappingURLProtocol.h"
 
 static KernelBridge *kernel = nil;
 
@@ -22,6 +23,8 @@ static KernelBridge *kernel = nil;
 {
   if (self = [super init])
   {
+    [NSURLProtocol registerClass:[AbsoluteURLMappingURLProtocol class]];
+
     //    jsRt = [[EmbeddedRuntime alloc] init];
     jsRt = [[WebRuntime alloc] init];
     pluginRegistry = [[PluginRegistry alloc] init];

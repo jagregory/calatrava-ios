@@ -21,10 +21,15 @@
       [self setView:_webView];
       [_webView setDelegate:self];
       [self removeWebViewBounceShadow];
-      
-      NSString *bundle = [[NSBundle mainBundle] bundlePath];
-      [_webView loadRequest:[NSURLRequest requestWithURL:
-                             [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/public/views/%@.html", bundle, [self pageName]]]]];
+
+      // read the HTML file from disk and load it with a base URL,
+      // this makes the page act as if it was requested from the
+      // public dir rather than the public/views dir.
+      NSString* path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"public/views/%@", [self pageName]] ofType:@"html"];
+      NSString* publicPath = [NSString stringWithFormat:@"%@/public", [[NSBundle mainBundle] bundlePath]];
+      NSString* content = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:nil];
+
+      [_webView loadHTMLString:content baseURL:[NSURL fileURLWithPath:publicPath]];
     }
     return self;
 }

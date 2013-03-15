@@ -27,6 +27,9 @@
 		C6301C6C15C208CF00E9E27F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6301C2F15C208CF00E9E27F /* WebViewController.m */; };
 		C6C851A815D88AB900445924 /* WebRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = C6C851A615D88AB900445924 /* WebRuntime.h */; };
 		C6C851A915D88AB900445924 /* WebRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C851A715D88AB900445924 /* WebRuntime.m */; };
+		D78C60A6DDB22472144F590B /* CalatravaWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = D78C64B53BFEBC7385EBDFC8 /* CalatravaWebView.h */; };
+		D78C6313A998EB8F85B3E9E4 /* CalatravaWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C63781F04CCC9588BF13A /* CalatravaWebView.m */; };
+		D78C6504F816530C4DCB61E1 /* CalatravaEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = D78C6CCDF3AC28DB5ADCE502 /* CalatravaEventDispatcher.h */; };
 		D78C6EBD9DBA265CC333DA7F /* UIWebView+SafeJavaScriptExecution.m in Sources */ = {isa = PBXBuildFile; fileRef = D78C6D10484A4A517F7CD0B3 /* UIWebView+SafeJavaScriptExecution.m */; };
 		D78C6EE438A7C26866711581 /* UIWebView+SafeJavaScriptExecution.h in Headers */ = {isa = PBXBuildFile; fileRef = D78C67DFA18B6A14C102B41E /* UIWebView+SafeJavaScriptExecution.h */; };
 		FD2C34CC16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = FD2C34CA16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h */; };
@@ -59,7 +62,10 @@
 		C632C7E515D6E3CA00203D4B /* JsRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsRuntime.h; sourceTree = "<group>"; };
 		C6C851A615D88AB900445924 /* WebRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRuntime.h; sourceTree = "<group>"; };
 		C6C851A715D88AB900445924 /* WebRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRuntime.m; sourceTree = "<group>"; };
+		D78C63781F04CCC9588BF13A /* CalatravaWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalatravaWebView.m; sourceTree = "<group>"; };
+		D78C64B53BFEBC7385EBDFC8 /* CalatravaWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalatravaWebView.h; sourceTree = "<group>"; };
 		D78C67DFA18B6A14C102B41E /* UIWebView+SafeJavaScriptExecution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+SafeJavaScriptExecution.h"; sourceTree = "<group>"; };
+		D78C6CCDF3AC28DB5ADCE502 /* CalatravaEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalatravaEventDispatcher.h; sourceTree = "<group>"; };
 		D78C6D10484A4A517F7CD0B3 /* UIWebView+SafeJavaScriptExecution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+SafeJavaScriptExecution.m"; sourceTree = "<group>"; };
 		FD2C34CA16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsoluteURLMappingURLProtocol.h; sourceTree = "<group>"; };
 		FD2C34CB16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsoluteURLMappingURLProtocol.m; sourceTree = "<group>"; };
@@ -130,6 +136,9 @@
 			children = (
 				C6301BF015C208CF00E9E27F /* BaseUIViewController.h */,
 				C6301BF115C208CF00E9E27F /* BaseUIViewController.m */,
+				D78C6CCDF3AC28DB5ADCE502 /* CalatravaEventDispatcher.h */,
+				D78C63781F04CCC9588BF13A /* CalatravaWebView.m */,
+				D78C64B53BFEBC7385EBDFC8 /* CalatravaWebView.h */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -194,6 +203,8 @@
 				C6088F1A1647B2D8002F6B00 /* AlertPlugin.h in Headers */,
 				D78C6EE438A7C26866711581 /* UIWebView+SafeJavaScriptExecution.h in Headers */,
 				FD2C34CC16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.h in Headers */,
+				D78C6504F816530C4DCB61E1 /* CalatravaEventDispatcher.h in Headers */,
+				D78C60A6DDB22472144F590B /* CalatravaWebView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +271,7 @@
 				C6088F1B1647B2D8002F6B00 /* AlertPlugin.m in Sources */,
 				D78C6EBD9DBA265CC333DA7F /* UIWebView+SafeJavaScriptExecution.m in Sources */,
 				FD2C34CD16F138C100FAFE33 /* AbsoluteURLMappingURLProtocol.m in Sources */,
+				D78C6313A998EB8F85B3E9E4 /* CalatravaWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

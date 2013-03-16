@@ -1,10 +1,6 @@
 #import "WebViewController.h"
 #import "UIWebView+SafeJavaScriptExecution.h"
 #import "CalatravaWebView.h"
-#import "CalatravaEventDispatcher.h"
-
-@interface WebViewController() <CalatravaEventDispatcher>
-@end
 
 @implementation WebViewController {
   NSString *pageName;

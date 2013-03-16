@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
+#import "CalatravaEventDispatcher.h"
 
-@interface BaseUIViewController : UIViewController{
+@interface BaseUIViewController : UIViewController <CalatravaEventDispatcher> {
     NSMutableDictionary *handlers;
 }
 

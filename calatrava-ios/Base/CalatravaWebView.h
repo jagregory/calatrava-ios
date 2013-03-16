@@ -10,4 +10,5 @@
 // webview has finished loading
 - (void)enqueueJavascript:(NSString*)javascript;
 
+- (void)loadView:(NSString*)pageName;
 @end

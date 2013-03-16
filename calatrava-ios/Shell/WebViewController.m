@@ -26,23 +26,11 @@
 }
 
 - (void)initWebView {
-  queuedBinds = [[NSMutableOrderedSet alloc] init];
-  queuedRenders = [[NSMutableOrderedSet alloc] init];
-  
-  webViewReady = NO;
-  
   webView = [[CalatravaWebView alloc] initWithEventDispatcher:self];
   self.view = webView;
   [self removeWebViewBounceShadow];
 
-  // read the HTML file from disk and load it with a base URL,
-  // this makes the page act as if it was requested from the
-  // public dir rather than the public/views dir.
-  NSString* path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"public/views/%@", [self pageName]] ofType:@"html"];
-  NSString* publicPath = [NSString stringWithFormat:@"%@/public", [[NSBundle mainBundle] bundlePath]];
-  NSString* content = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:nil];
-
-  [webView loadHTMLString:content baseURL:[NSURL fileURLWithPath:publicPath]];
+  [webView loadView:[self pageName]];
 }
 
 - (NSString *)pageName {

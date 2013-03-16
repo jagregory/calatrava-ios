@@ -2,6 +2,66 @@
 #import "CalatravaEventDispatcher.h"
 #import "UIWebView+SafeJavaScriptExecution.h"
 
+@interface ComposedUIWebViewDelegate : NSObject<UIWebViewDelegate>
+
++ (ComposedUIWebViewDelegate*)delegateWith:(NSArray*)delegates;
+
+@end
+
+@implementation ComposedUIWebViewDelegate {
+  NSArray* delegates;
+}
+
++ (ComposedUIWebViewDelegate*)delegateWith:(NSArray*)delegates {
+  return [[ComposedUIWebViewDelegate alloc] initWith:delegates];
+}
+
+- (id)initWith:(NSArray*)theDelegates {
+  if (self = [self init]) {
+    delegates = theDelegates;
+  }
+  
+  return self;
+}
+
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+  for (id <UIWebViewDelegate> delegate in delegates) {
+    if ([delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
+      if ([delegate webView:webView shouldStartLoadWithRequest:request navigationType:navigationType]) {
+        return YES;
+      }
+    }
+  }
+
+  return NO;
+}
+
+- (void)webViewDidStartLoad:(UIWebView*)webView {
+  for (id <UIWebViewDelegate> delegate in delegates) {
+    if ([delegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
+      [delegate webViewDidStartLoad:webView];
+    }
+  }
+}
+
+- (void)webViewDidFinishLoad:(UIWebView*)webView {
+  for (id <UIWebViewDelegate> delegate in delegates) {
+    if ([delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
+      [delegate webViewDidFinishLoad:webView];
+    }
+  }
+}
+
+- (void)webView:(UIWebView*)webView didFailLoadWithError:(NSError*)error {
+  for (id <UIWebViewDelegate> delegate in delegates) {
+    if ([delegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
+      [delegate webView:webView didFailLoadWithError:error];
+    }
+  }
+}
+
+@end
+
 @interface CalatravaWebView () <UIWebViewDelegate>
 @end
 
@@ -19,6 +79,10 @@
   }
 
   return self;
+}
+
+- (void)setDelegate:(id <UIWebViewDelegate>)delegate {
+  [super setDelegate:[ComposedUIWebViewDelegate delegateWith:@[self, delegate]]];
 }
 
 - (void)enqueueJavascript:(NSString*)javascript {

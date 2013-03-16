@@ -9,6 +9,6 @@
 // execute a javascript string, this may be deferred until the
 // webview has finished loading
 - (void)enqueueJavascript:(NSString*)javascript;
-
 - (void)loadView:(NSString*)pageName;
+
 @end
